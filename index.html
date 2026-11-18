@@ -939,13 +939,13 @@ main, footer { position: relative; z-index: 1; }
 
 .personas {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   position: relative;
   z-index: 1;
 }
-@media (max-width: 980px) { .personas { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px) { .personas { grid-template-columns: 1fr; } }
+@media (max-width: 1040px) { .personas { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px)  { .personas { grid-template-columns: 1fr; } }
 
 .persona-card {
   background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
@@ -1016,6 +1016,33 @@ main, footer { position: relative; z-index: 1; }
 .persona-3 .pv-sq:nth-child(2) { --r: 6deg; }
 .persona-3 .pv-sq:nth-child(3) { --r: -12deg; }
 .persona-card:hover .persona-3 .pv-sq { transform: rotate(0deg) translateY(-4px); }
+
+/* Lender 视觉：大方块 + 环绕小方块 */
+.persona-4 { position: relative; display: flex; align-items: center; justify-content: center; }
+.persona-4 .pv-sq {
+  position: absolute;
+  background: var(--amber);
+  border-color: var(--amber);
+  box-shadow: 0 0 16px rgba(232, 162, 60, 0.4);
+}
+.persona-4 .pv-sq:nth-child(1) {
+  position: relative;
+  width: 56px; height: 56px;
+  border-radius: 15px;
+}
+.persona-4 .pv-sq:nth-child(2) {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  transform: translate(-40px, -24px);
+}
+.persona-4 .pv-sq:nth-child(3) {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  transform: translate(40px, 26px);
+}
+.persona-card:hover .persona-4 .pv-sq:nth-child(1) { transform: rotate(90deg) scale(1.06); }
+.persona-card:hover .persona-4 .pv-sq:nth-child(2) { transform: translate(-52px, -34px) rotate(24deg); }
+.persona-card:hover .persona-4 .pv-sq:nth-child(3) { transform: translate(52px, 36px) rotate(-24deg); }
 
 .persona-card h4 {
   font-size: 16px; font-weight: 500; color: #fff;
@@ -1430,36 +1457,46 @@ footer {
 
       <div class="section-head reveal">
         <div class="eyebrow">Who this is for</div>
-        <h2>Three ways to use it.</h2>
+        <h2>Built for both sides of a loan.</h2>
       </div>
 
       <div class="personas">
-        <div class="persona-card reveal reveal-d1">
+        <div class="persona-card is-lender reveal reveal-d1">
+          <div class="persona-viz persona-4">
+            <div class="pv-sq"></div>
+            <div class="pv-sq"></div>
+            <div class="pv-sq"></div>
+          </div>
+          <h4>Lenders</h4>
+          <p>Your capital keeps earning where it is, until a higher rate is matched here. You set the minimum rate. Nothing fills below it.</p>
+        </div>
+
+        <div class="persona-card reveal reveal-d2">
           <div class="persona-viz persona-1">
             <div class="pv-sq"></div>
             <div class="pv-sq"></div>
             <div class="pv-sq"></div>
           </div>
           <h4>Yield strategy runners</h4>
-          <p>Arbitrage, LP, staking. The margin is 1–2%, so you need a capped cost before you'll put capital in at all.</p>
-        </div>
-
-        <div class="persona-card reveal reveal-d2">
-          <div class="persona-viz persona-2">
-            <div class="pv-sq"></div>
-          </div>
-          <h4>Short-term borrowing</h4>
-          <p>The decision collapses to one question: does it pencil out at signing? If yes, sign.</p>
+          <p>Arbitrage, LP, staking. The margin is 1–2%, and a floating rate can erase it mid-trade. With the cost capped at signing, the math works before you commit.</p>
         </div>
 
         <div class="persona-card reveal reveal-d3">
+          <div class="persona-viz persona-2">
+            <div class="pv-sq"></div>
+          </div>
+          <h4>Event-driven borrowing</h4>
+          <p>The demand is real, but the decision stalls on what rates will do next. Here it collapses to one question: does it pencil out at signing? If yes, sign.</p>
+        </div>
+
+        <div class="persona-card reveal reveal-d4">
           <div class="persona-viz persona-3">
             <div class="pv-sq"></div>
             <div class="pv-sq"></div>
             <div class="pv-sq"></div>
           </div>
           <h4>Long-horizon collateralized</h4>
-          <p>Borrowing stablecoins against BTC you don't want to sell, for a year or more. A capped cost is what lets you borrow now instead of waiting.</p>
+          <p>Borrowing against assets you'd rather hold than sell. When the cost has no ceiling, the position never gets opened. A capped cost lets you borrow now, even if you expect the collateral to rise.</p>
         </div>
       </div>
 
