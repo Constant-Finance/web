@@ -9,6 +9,7 @@ Source for the Constant Finance homepage, live at [constant.finance](https://con
 - Litepaper: [constant.finance/litepaper.pdf](https://constant.finance/litepaper.pdf)
 - X: [@constant_fi](https://x.com/constant_fi)
 - Discord: [discord.gg/gCXeqHYCXC](https://discord.gg/gCXeqHYCXC)
+- LinkedIn: [Constant Finance](https://www.linkedin.com/company/constant-fi/)
 
 ## Contact
 
