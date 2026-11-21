@@ -273,11 +273,23 @@ nav.wrap {
 .mobile-menu a:last-child { border-bottom: none; }
 .mobile-menu a:hover { color: var(--ink); }
 
+/* 移动端菜单里的 Points 高亮 */
+.mobile-menu a.mm-points { color: var(--amber); font-weight: 600; }
+.mobile-menu a.mm-points:hover { color: #FFB74D; }
+
 @media (max-width: 700px) {
   .navlinks { display: none; }
   .nav-toggle { display: inline-flex; }
   .logo svg { width: 34px; height: 34px; }
   .logo-text { font-size: 15px; }
+
+  /* 手机上隐藏导航栏里的 Points，改由汉堡菜单提供 */
+  .nav-right .nav-points { display: none; }
+}
+
+/* 防止在手机打开菜单后放大/旋转到桌面宽度时菜单卡住 */
+@media (min-width: 701px) {
+  .mobile-menu { display: none !important; }
 }
 
 /* ============================================================
@@ -1286,7 +1298,7 @@ footer {
     </div>
 
     <div class="nav-right">
-      <a href="https://points.constant.finance/" target="_blank" rel="noopener" class="btn btn-amber-outline btn-sm">Points</a>
+      <a href="https://points.constant.finance/" target="_blank" rel="noopener" class="btn btn-amber-outline btn-sm nav-points">Points</a>
       <a href="https://app.constant.finance/en/" target="_blank" rel="noopener" class="btn btn-amber-fill btn-sm">Launch App</a>
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
@@ -1296,6 +1308,7 @@ footer {
     <a href="https://constant.finance/litepaper.pdf" target="_blank" rel="noopener">Litepaper</a>
     <a href="https://constant-finance.gitbook.io/docs" target="_blank" rel="noopener">Docs</a>
     <a href="https://constant-finance.gitbook.io/docs/faq" target="_blank" rel="noopener">FAQ</a>
+    <a href="https://points.constant.finance/" target="_blank" rel="noopener" class="mm-points">Points</a>
   </div>
 </header>
 
